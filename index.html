@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Love, Pratigya ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg1: #120023;
+      --bg2: #2b0040;
+      --accent: #ff6fb5;
+      --accent-soft: rgba(255, 111, 181, 0.25);
+      --card-bg: rgba(255, 255, 255, 0.08);
+      --text-main: #ffffff;
+      --text-soft: #f3e6ff;
+      --highlight: #ffeaa7;
+      --border-glow: rgba(255, 111, 181, 0.6);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.5);
+      --blur: 18px;
+      --transition-fast: 0.4s ease;
+      --transition-slow: 0.8s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #381265 0, #120023 40%, #05000b 100%);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* Floating hearts background */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 16px;
+      color: rgba(255, 153, 204, 0.7);
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-20vh) translateX(40px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Intro screen */
+    .intro-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, #ff9ff3 0, #2d0b45 40%, #05000b 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      z-index: 999;
+      transition: opacity var(--transition-slow), visibility var(--transition-slow);
+    }
+
+    .intro-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .intro-title {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(3rem, 7vw, 5rem);
+      color: #fff;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .intro-subtitle {
+      font-size: 1rem;
+      max-width: 500px;
+      color: var(--text-soft);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .intro-btn {
+      padding: 0.9rem 2.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: linear-gradient(120deg, #ff8fb1, #ffa6ff);
+      color: #2b0037;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .intro-btn:hover::before {
+      opacity: 1;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(90deg, rgba(7, 0, 20, 0.9), rgba(43, 0, 64, 0.6));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.7rem;
+      color: var(--highlight);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-1px);
+    }
+
+    /* Layout */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    section {
+      margin: 4rem 0;
+      position: relative;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      max-width: 620px;
+      color: var(--text-soft);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-main-title {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-main-title span {
+      color: var(--accent);
+    }
+
+    .hero-tag {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+      max-width: 420px;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .pill {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.35));
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .pill span.emoji {
+      font-size: 0.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #ff6fb5, #ffa6ff);
+      color: #2b0037;
+      box-shadow: 0 10px 30px rgba(255, 111, 181, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 40px rgba(255, 111, 181, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-soft);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-1px);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(15, 3, 30, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(255, 111, 181, 0.55), transparent 60%);
+      top: -80px;
+      right: -60px;
+      opacity: 0.8;
+      filter: blur(6px);
+    }
+
+    .hero-card-main {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-avatar-placeholder {
+      width: 90px;
+      height: 90px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #ff9ff3, #feca57);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-avatar-placeholder span {
+      font-family: "Great Vibes", cursive;
+      font-size: 2.4rem;
+      color: #2b0037;
+    }
+
+    .hero-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-card p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .distance-strip {
+      margin-top: 1.1rem;
+      border-radius: 999px;
+      padding: 0.5rem 0.7rem;
+      background: rgba(5, 0, 15, 0.8);
+      border: 1px dashed rgba(255, 255, 255, 0.28);
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .distance-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* Story section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .story-card {
+      padding: 1.6rem;
+      border-radius: 1.3rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(var(--blur));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .story-card p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .story-highlight {
+      color: var(--highlight);
+      font-weight: 500;
+    }
+
+    .map-line {
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
+    }
+
+    .map-line span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.3rem;
+      font-size: 0.8rem;
+    }
+
+    .stat-pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .story-grid-visual {
+      position: relative;
+      padding: 1.6rem;
+      border-radius: 1.4rem;
+      background: radial-gradient(circle at top, rgba(255, 111, 181, 0.35), rgba(9, 0, 20, 0.95));
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 18px 40px rgba(255, 111, 181, 0.5);
+      overflow: hidden;
+    }
+
+    .orbit {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.25);
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-center {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 0.6rem;
+    }
+
+    .orbit-tag {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .orbit-tag.guj {
+      top: -14px;
+      left: 8px;
+    }
+
+    .orbit-tag.bihar {
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .orbit-tag.vc {
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .orbit-tag span.emoji {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .light-ring {
+      position: absolute;
+      inset: 70% -40%;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 65%);
+      opacity: 0.4;
+      filter: blur(10px);
+    }
+
+    /* Dress show section */
+    .dress-grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(220px, 1fr);
+      gap: 1.2rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .dress-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .dress-grid::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+    }
+
+    .dress-card {
+      scroll-snap-align: start;
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(var(--blur));
+    }
+
+    .dress-image-placeholder {
+      border-radius: 0.9rem;
+      height: 140px;
+      background: linear-gradient(135deg, rgba(255, 194, 240, 0.6), rgba(171, 194, 255, 0.7));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #2b0037;
+      text-align: center;
+      padding: 0.6rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .dress-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .dress-note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .dress-tag {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.7rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Why I love you section */
+    .love-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .love-card {
+      padding: 1rem;
+      border-radius: 1rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(var(--blur));
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+      font-size: 0.88rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .love-emoji {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .love-title {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .love-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .love-card:hover::after {
+      opacity: 1;
+    }
+
+    /* Timeline section */
+    .timeline {
+      position: relative;
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+      border-left: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 0.6rem;
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: #05000b;
+      position: absolute;
+      left: -7px;
+      top: 0.35rem;
+      box-shadow: 0 0 0 4px rgba(255, 111, 181, 0.25);
+    }
+
+    .timeline-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 0.1rem;
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    /* Video call & feelings section */
+    .vc-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .vc-screen {
+      border-radius: 1.3rem;
+      background: radial-gradient(circle at top, rgba(105, 145, 255, 0.4), rgba(5, 0, 20, 0.95));
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vc-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 0.6rem;
+    }
+
+    .vc-signal {
+      display: flex;
+      gap: 2px;
+    }
+
+    .vc-signal span {
+      width: 5px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .vc-signal span:nth-child(3),
+    .vc-signal span:nth-child(4) {
+      background: rgba(144, 238, 144, 0.95);
+    }
+
+    .vc-main {
+      position: relative;
+      height: 230px;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff9ff3, #a29bfe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2b0037;
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+    }
+
+    .vc-mini {
+      position: absolute;
+      width: 80px;
+      height: 110px;
+      border-radius: 0.8rem;
+      background: rgba(0, 0, 0, 0.75);
+      bottom: 0.7rem;
+      right: 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #f5f3ff;
+    }
+
+    .vc-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    .vc-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      border: none;
+      cursor: default;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+    }
+
+    .vc-btn.end {
+      background: #ff4d6b;
+    }
+
+    .vc-note {
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+
+    .feel-list {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .feel-list ul {
+      margin-top: 0.6rem;
+      padding-left: 1.1rem;
+    }
+
+    .feel-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Promises section */
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .promise-card {
+      padding: 1.1rem;
+      border-radius: 1.1rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(var(--blur));
+      font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .promise-label {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-bottom: 0.2rem;
+    }
+
+    .promise-title {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .promise-card span.emoji {
+      font-size: 1.2rem;
+      margin-right: 0.3rem;
+    }
+
+    /* Playlist / quote slider */
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .song-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    .song-list li {
+      padding: 0.45rem 0.75rem;
+      border-radius: 0.7rem;
+      background: rgba(0, 0, 0, 0.35);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .song-tag {
+      font-size: 0.7rem;
+      opacity: 0.75;
+    }
+
+    .quote-card {
+      padding: 1.4rem 1.2rem;
+      border-radius: 1.1rem;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.16), rgba(6, 0, 18, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: var(--shadow-soft);
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    .quote-text {
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+
+    .quote-meta {
+      font-size: 0.78rem;
+      opacity: 0.8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Future dreams section */
+    .dream-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .dream-card {
+      padding: 1rem;
+      border-radius: 1rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.9rem;
+    }
+
+    .dream-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .dream-card-header span {
+      font-size: 1.2rem;
+    }
+
+    /* Wish wall */
+    .wish-wall {
+      padding: 1.5rem 1.3rem;
+      border-radius: 1.3rem;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), rgba(7, 0, 22, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    .wish-tagline {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-bottom: 0.7rem;
+    }
+
+    .wish-list {
+      list-style: "✧ ";
+      padding-left: 1rem;
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+
+    /* Final message */
+    .note-card {
+      padding: 1.8rem 1.5rem;
+      border-radius: 1.4rem;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), rgba(7, 0, 22, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .note-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .note-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent);
+    }
+
+    .note-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+    }
+
+    .note-sign {
+      text-align: right;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .note-sign span {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.4rem;
+      color: var(--highlight);
+    }
+
+    .note-glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 111, 181, 0.5), transparent 60%);
+      top: -120px;
+      left: -70px;
+      opacity: 0.7;
+      filter: blur(6px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* Scroll reveal base */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity var(--transition-slow), transform var(--transition-slow);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal[data-delay="1"] {
+      transition-delay: 0.15s;
+    }
+    .reveal[data-delay="2"] {
+      transition-delay: 0.3s;
+    }
+    .reveal[data-delay="3"] {
+      transition-delay: 0.45s;
+    }
+    .reveal[data-delay="4"] {
+      transition-delay: 0.6s;
+    }
+
+    /* Typewriter */
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blinkCursor 0.8s steps(1) infinite;
+    }
+
+    @keyframes blinkCursor {
+      0%, 50% { border-color: rgba(255, 255, 255, 0.8); }
+      51%, 100% { border-color: transparent; }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+      .vc-grid {
+        grid-template-columns: 1fr;
+      }
+      .playlist-grid {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+      .nav-links {
+        width: 100%;
+      }
+      main {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating hearts background -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- Intro overlay -->
+  <div class="intro-overlay" id="intro">
+    <h1 class="intro-title">Hi, <span style="color:#ffeaa7;">Pratigya</span> ❤️</h1>
+    <p class="intro-subtitle">
+      This little website travelled all the way from Gujarat to Bihar, just for you.<br/>
+      Scroll slowly… every glow, every word, every heart is my feelings for you,
+      written on a screen instead of a page.
+    </p>
+    <button class="intro-btn" id="enterBtn">
+      <span>Tap to enter our universe 💫</span>
+    </button>
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo">P &amp; Me ✨</div>
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#story">Our Distance</a>
+        <a href="#dresses">Your Dresses</a>
+        <a href="#vc">Video Calls</a>
+        <a href="#love">Why You’re Special</a>
+        <a href="#playlist">Vibes</a>
+        <a href="#dreams">Future</a>
+        <a href="#note">Letter</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="reveal">
+      <div class="hero">
+        <div>
+          <div class="section-label">For my girl in Bihar</div>
+          <h2 class="hero-main-title">
+            To my <span>beautiful</span> &amp; <span>cute</span> <br/>
+            <span class="typewriter" id="typewriter">Pratigya</span>
+          </h2>
+          <p class="hero-tag">
+            From random dress trials on video calls to long late-night talks –
+            every moment with you makes the distance feel a little smaller.
+          </p>
+
+          <div class="hero-pill-row">
+            <div class="pill">
+              <span class="emoji">📍</span> Gujarat ➝ Bihar
+            </div>
+            <div class="pill">
+              <span class="emoji">📱</span> Long-distance, strong heart
+            </div>
+            <div class="pill">
+              <span class="emoji">👗</span> Dress-show queen
+            </div>
+            <div class="pill">
+              <span class="emoji">💗</span> Feelings 100% real
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#dresses" class="btn-primary">
+              Start with your dresses 👗
+            </a>
+            <a href="#note" class="btn-ghost">
+              Read my little letter 💌
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-main">
+            <div class="hero-avatar-placeholder">
+              <span>P</span>
+            </div>
+            <h3>My favourite notification: <br/>“Pratigya is calling…”</h3>
+            <p>
+              No matter how far Gujarat and Bihar are, when your face appears on my screen,
+              suddenly the distance feels smaller and my day feels lighter.
+            </p>
+            <div class="badge-row">
+              <div class="badge">Cuteness level: <strong>∞</strong></div>
+              <div class="badge">Smile: <strong>Deadly</strong> 😍</div>
+              <div class="badge">Dress sense: <strong>Unbeatable</strong> 👑</div>
+            </div>
+
+            <div class="distance-strip">
+              <span>📍 Me: <strong>Gujarat</strong></span>
+              <span>💞</span>
+              <span>📍 You: <strong>Bihar</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Distance Story -->
+    <section id="story" class="reveal" data-delay="1">
+      <div class="section-label">Long distance, strong heart</div>
+      <h2 class="section-title">Our Gujarat ↔ Bihar story</h2>
+      <p class="section-subtitle">
+        People talk about long-distance like it’s only difficult. But they don’t know
+        how your face on my screen feels like home, how your “can you hear me?” makes me smile,
+        and how a simple “I miss you” from you can fix my whole mood.
+      </p>
+
+      <div class="story-grid">
+        <div class="story-card">
+          <p>
+            You in Bihar, me in Gujarat – two states, two worlds, two lives running in parallel.
+            But every time we connect, the world shrinks down to just you and me,
+            and suddenly it feels like we’re in the same room.
+          </p>
+          <p>
+            The network might lag, the video might blur, the audio might break,
+            but the one thing that never becomes weak is
+            <span class="story-highlight">how I feel for you.</span>
+          </p>
+          <p>
+            When you call just to show a new outfit, or you ask,
+            “Ye dress thik lag raha hai?” – in that moment, I feel lucky.
+            Because out of everyone, <span class="story-highlight">you chose me</span>
+            to share that moment with.
+          </p>
+
+          <div class="map-line">
+            <span>🗺️ Gujarat (me) ⟶ Bihar (you)</span>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat-pill">Countless video calls 📞</div>
+            <div class="stat-pill">Infinite “how do I look?” 👗</div>
+            <div class="stat-pill">Lifetime worth of smiles saved 💾</div>
+          </div>
+        </div>
+
+        <div class="story-grid-visual">
+          <div class="orbit">
+            <div class="orbit-center">
+              <div>Two states.</div>
+              <div>One story.</div>
+              <div>Same heart. ❤️</div>
+            </div>
+            <div class="orbit-tag guj">
+              <div>
+                <span class="emoji">🧑‍💻</span>
+                Gujarat<br/>
+                (me)
+              </div>
+            </div>
+            <div class="orbit-tag bihar">
+              <div>
+                <span class="emoji">👸</span>
+                Bihar<br/>
+                (you)
+              </div>
+            </div>
+            <div class="orbit-tag vc">
+              <div>
+                <span class="emoji">📱</span>
+                Video calls<br/>
+                in between
+              </div>
+            </div>
+          </div>
+          <div class="light-ring"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dress Show Section -->
+    <section id="dresses" class="reveal" data-delay="2">
+      <div class="section-label">You &amp; your pretty outfits</div>
+      <h2 class="section-title">Your dress-show runway (on my screen) 👗✨</h2>
+      <p class="section-subtitle">
+        This is a tiny runway made only for you. One day, I want to fill this with real pictures
+        from our video calls – every saree trial, every new outfit, every “wait, I’ll show you full view.”
+      </p>
+
+      <div class="dress-grid">
+        <div class="dress-card">
+          <div class="dress-tag">Look 01</div>
+          <div class="dress-image-placeholder">
+            Future screenshot from your video call goes here. 💕
+          </div>
+          <div class="dress-title">“How do I look?”</div>
+          <div class="dress-note">
+            Answer in my heart: “Perfect. It’s you. That’s enough.”
+          </div>
+        </div>
+
+        <div class="dress-card">
+          <div class="dress-tag">Look 02</div>
+          <div class="dress-image-placeholder">
+            That outfit where I just stare and forget to reply properly. 🤭
+          </div>
+          <div class="dress-title">Speechless mode on</div>
+          <div class="dress-note">
+            Sometimes you ask, “Bol na kuch…” but my brain is like:
+            “Error 404: Words not found. She’s too pretty.”
+          </div>
+        </div>
+
+        <div class="dress-card">
+          <div class="dress-tag">Look 03</div>
+          <div class="dress-image-placeholder">
+            Simple, casual you – still my favourite version. 🌸
+          </div>
+          <div class="dress-title">Your “normal” days</div>
+          <div class="dress-note">
+            T-shirt, messy hair, no make-up – and still I’m like,
+            “Yahi hai, this is the one I like.”
+          </div>
+        </div>
+
+        <div class="dress-card">
+          <div class="dress-tag">Look 04</div>
+          <div class="dress-image-placeholder">
+            One day, this will be a real photo – not through a screen. 🤍
+          </div>
+          <div class="dress-title">Someday, in real life</div>
+          <div class="dress-note">
+            I imagine you standing in front of me, twirling in a new dress, and me saying
+            properly: “You look beautiful, Pratigya. For real. Right here.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Call Section -->
+    <section id="vc" class="reveal" data-delay="2">
+      <div class="section-label">Our favourite connection</div>
+      <h2 class="section-title">When the screen lights up with you 📱💞</h2>
+
+      <div class="vc-grid">
+        <div class="vc-screen">
+          <div class="vc-topbar">
+            <span>Pratigya • Video call</span>
+            <div class="vc-signal">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="vc-main">
+            Your smile here one day, in full HD. <br/>
+            For now, just imagine you in your favourite dress,
+            laughing at something silly I said.
+            <div class="vc-mini">
+              Me in Gujarat, staring at you like 😶😍
+            </div>
+          </div>
+          <div class="vc-controls">
+            <div class="vc-btn">🎤</div>
+            <div class="vc-btn">🎥</div>
+            <div class="vc-btn end">📞</div>
+          </div>
+          <div class="vc-note">
+            “Net slow hai… ruk na… ab aa raha hai?” – still my favourite kind of chaos.
+          </div>
+        </div>
+
+        <div class="feel-list">
+          <p>
+            What I feel during our video calls:
+          </p>
+          <ul>
+            <li>Wishing I could fix the network so I could see you clearly every second.</li>
+            <li>Trying not to stare too much when you’re adjusting your camera or hair.</li>
+            <li>Smiling like an idiot even when the call cuts and I’m looking at a black screen.</li>
+            <li>Feeling grateful that even with all this distance, I still get to see you, hear you, and be with you – in our own way.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why I love you -->
+    <section id="love" class="reveal" data-delay="3">
+      <div class="section-label">Reasons you’re special</div>
+      <h2 class="section-title">Little things I absolutely love about you 💫</h2>
+      <p class="section-subtitle">
+        Big speeches are overrated. It’s the small, daily, simple things about you
+        that actually stay in my heart.
+      </p>
+
+      <div class="love-grid">
+        <div class="love-card">
+          <div class="love-emoji">😊</div>
+          <div class="love-title">Your smile</div>
+          <div>
+            The way your eyes become smaller and your cheeks lift when you smile –
+            it literally fixes my bad days.
+          </div>
+        </div>
+
+        <div class="love-card">
+          <div class="love-emoji">🎥</div>
+          <div class="love-title">Our video calls</div>
+          <div>
+            “Can you see me?” “Net slow hai” “Wait I’ll adjust the camera” –
+            all of it is cute to me because it’s with you.
+          </div>
+        </div>
+
+        <div class="love-card">
+          <div class="love-emoji">👗</div>
+          <div class="love-title">Your fashion sense</div>
+          <div>
+            Ethnic, casual, simple, extra – somehow you make everything look like it
+            was made for you only.
+          </div>
+        </div>
+
+        <div class="love-card">
+          <div class="love-emoji">🫶</div>
+          <div class="love-title">How you make me feel</div>
+          <div>
+            With you, I can be myself – honest, soft, weird – and still feel understood.
+          </div>
+        </div>
+
+        <div class="love-card">
+          <div class="love-emoji">💬</div>
+          <div class="love-title">Your little talks</div>
+          <div>
+            The way you share small details from your day, your doubts about outfits,
+            your “kya karu ab?” moments – I love hearing it all.
+          </div>
+        </div>
+
+        <div class="love-card">
+          <div class="love-emoji">💓</div>
+          <div class="love-title">Just… you</div>
+          <div>
+            Even if you didn’t dress up, even if we didn’t talk much that day –
+            just knowing you’re there is enough.
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label">Right now</div>
+          <div class="timeline-text">
+            You’re in Bihar, I’m in Gujarat, and this website is our tiny bridge in the middle.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label">Every call</div>
+          <div class="timeline-text">
+            Another outfit seen, another “how do I look?” answered, another memory added to my heart.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label">Someday</div>
+          <div class="timeline-text">
+            The distance will end, and I’ll say in person what I always think:
+            “You’re beautiful, Pratigya. More than you realise.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promises Section -->
+    <section class="reveal" data-delay="3">
+      <div class="section-label">Little promises</div>
+      <h2 class="section-title">Things I quietly promise you 🤍</h2>
+
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-label">Promise #01</div>
+          <div class="promise-title"><span class="emoji">👂</span>To listen, even to the small things</div>
+          <p>
+            Whether it’s about your dress, your day, your feelings, or your random overthinking –
+            I promise to listen, not just hear.
+          </p>
+        </div>
+
+        <div class="promise-card">
+          <div class="promise-label">Promise #02</div>
+          <div class="promise-title"><span class="emoji">📱</span>To show up</div>
+          <p>
+            Sometimes network may fail, timings may clash, life may get busy –
+            but I’ll keep finding my way back to your calls.
+          </p>
+        </div>
+
+        <div class="promise-card">
+          <div class="promise-label">Promise #03</div>
+          <div class="promise-title"><span class="emoji">🤍</span>To respect your feelings</div>
+          <p>
+            Your comfort, your pace, your emotions – they matter to me more than
+            just “being together fast.” I want us to feel right, not rushed.
+          </p>
+        </div>
+
+        <div class="promise-card">
+          <div class="promise-label">Promise #04</div>
+          <div class="promise-title"><span class="emoji">🫰</span>To keep choosing you</div>
+          <p>
+            On good days, bad days, confusing days, silent days –
+            I’ll keep choosing you, again and again.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Playlist & Quotes -->
+    <section id="playlist" class="reveal" data-delay="2">
+      <div class="section-label">Our vibe</div>
+      <h2 class="section-title">If our story was a playlist & quotes 🎧</h2>
+      <p class="section-subtitle">
+        These are not real songs and quotes (yet), but they describe the feeling.
+        One day we’ll make our actual playlist and keep it playing while we’re on call.
+      </p>
+
+      <div class="playlist-grid">
+        <div>
+          <h3 style="margin-bottom:0.7rem;font-size:1rem;">Imaginary playlist for us</h3>
+          <ul class="song-list">
+            <li>
+              <span>“Dress Show – Unofficial Remix”</span>
+              <span class="song-tag">For every “how do I look?”</span>
+            </li>
+            <li>
+              <span>“Network Thoda Slow Hai”</span>
+              <span class="song-tag">For laggy but cute calls</span>
+            </li>
+            <li>
+              <span>“From Gujarat, With Love”</span>
+              <span class="song-tag">Dedicated only to you</span>
+            </li>
+            <li>
+              <span>“Someday, No Distance”</span>
+              <span class="song-tag">For the day we meet</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom:0.7rem;font-size:1rem;">Rotating love note</h3>
+          <div class="quote-card">
+            <div class="quote-text" id="quoteText">
+              You are not just someone I talk to. You’re someone my heart waits for.
+            </div>
+            <div class="quote-meta">
+              <span id="quoteIndexLabel">Note 1 of 4</span>
+              <span>Auto-changing just like my thoughts about you. 💭</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Dreams -->
+    <section id="dreams" class="reveal" data-delay="3">
+      <div class="section-label">Soon, in real life</div>
+      <h2 class="section-title">Little future dreams with you 🌙</h2>
+      <p class="section-subtitle">
+        Long-distance makes us imagine a lot. So here are a few small dreams I quietly keep for us.
+      </p>
+
+      <div class="dream-grid">
+        <div class="dream-card">
+          <div class="dream-card-header">
+            <span>🌆</span> <span>First real meet</span>
+          </div>
+          <p>
+            One day I’ll finally see you in person – no screen, no call. Just you, standing there,
+            and me trying not to look too shocked at how beautiful you are in real.
+          </p>
+        </div>
+
+        <div class="dream-card">
+          <div class="dream-card-header">
+            <span>🍽️</span> <span>Date without network issues</span>
+          </div>
+          <p>
+            We’ll sit together, eat something simple, talk without “hello? voice aa raha hai?”
+            and laugh without worrying about battery.
+          </p>
+        </div>
+
+        <div class="dream-card">
+          <div class="dream-card-header">
+            <span>👗</span> <span>Real-life dress show</span>
+          </div>
+          <p>
+            Instead of placing your phone somewhere and adjusting angle,
+            you’ll just come out and say: “How do I look?” And I’ll answer
+            while looking straight at you.
+          </p>
+        </div>
+
+        <div class="dream-card">
+          <div class="dream-card-header">
+            <span>🕊️</span> <span>Calm, simple days</span>
+          </div>
+          <p>
+            Not everything has to be dramatic. I dream of boring, peaceful days with you too –
+            sitting, doing nothing special, but still feeling complete.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wish Wall -->
+    <section class="reveal" data-delay="4">
+      <div class="section-label">If this page could talk</div>
+      <h2 class="section-title">A small wish-wall for you 💌</h2>
+
+      <div class="wish-wall">
+        <div class="wish-tagline">
+          If I could pin notes on a wall for you, they would probably say:
+        </div>
+        <ul class="wish-list">
+          <li>I hope you never doubt how beautiful you are – not just outside, but in the way you care, talk, and feel.</li>
+          <li>I hope you always remember that even from far, there is someone silently praying for your peace and happiness.</li>
+          <li>I hope on days you feel low, you think of this page and remember: “Someone made all this just for me.”</li>
+          <li>I hope one day we open this together, sitting side by side, and laugh about how far we’ve come.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Final note -->
+    <section id="note" class="reveal" data-delay="4">
+      <div class="section-label">A small letter</div>
+      <h2 class="section-title">From my heart to yours 💌</h2>
+
+      <div class="note-card">
+        <div class="note-glow"></div>
+        <div class="note-inner">
+          <div class="note-title">Dear Pratigya,</div>
+          <p class="note-text">
+            I know we’re not in the same city. We don’t get daily meets, random walks,
+            or surprise visits. But we do have something special:
+            a connection that refuses to give up, even with all this distance.
+          </p>
+          <p class="note-text">
+            You don’t have to try so hard to look perfect for me. You already are –
+            in your loud laughs, your shy smiles, your confused “kesa lag raha hai?”
+            and in those little pauses where you search for words.
+          </p>
+          <p class="note-text">
+            This website is just my way of freezing one constant truth:
+            <br/><strong>You are special to me.</strong>
+            Not just because you’re beautiful and cute, but because of how you make me feel
+            understood, happy, and less alone – from miles away.
+          </p>
+          <p class="note-text">
+            One day, the distance will end. Until then, I’ll keep loving you from Gujarat,
+            and you keep shining in Bihar. Whenever you miss me, open this page
+            and remember: somewhere, I’m probably thinking about you too.
+          </p>
+          <div class="note-sign">
+            With all my heart,<br/>
+            <span>yours</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with distance, feelings &amp; a lot of <span>love</span> just for you, Pratigya. 💖
+  </footer>
+
+  <script>
+    // Floating hearts generator
+    (function createHearts() {
+      const container = document.getElementById("hearts");
+      const totalHearts = 26;
+      for (let i = 0; i < totalHearts; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.textContent = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 8 + Math.random() * 6 + "s";
+        heart.style.animationDelay = -Math.random() * 10 + "s";
+        heart.style.fontSize = 12 + Math.random() * 20 + "px";
+        container.appendChild(heart);
+      }
+    })();
+
+    // Intro overlay hide
+    const intro = document.getElementById("intro");
+    const enterBtn = document.getElementById("enterBtn");
+    enterBtn.addEventListener("click", () => {
+      intro.classList.add("hidden");
+      document.body.style.overflowY = "auto";
+    });
+
+    // Scroll reveal using IntersectionObserver
+    const reveals = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    reveals.forEach((el) => revealObserver.observe(el));
+
+    // Smooth scroll for nav links
+    document.querySelectorAll("a[href^='#']").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    // Simple typewriter effect for her name
+    const twElement = document.getElementById("typewriter");
+    const fullText = "Pratigya";
+    let idx = 0;
+    twElement.textContent = "";
+    function type() {
+      if (idx <= fullText.length) {
+        twElement.textContent = fullText.slice(0, idx);
+        idx++;
+        setTimeout(type, 140);
+      }
+    }
+    type();
+
+    // Rotating love quotes
+    const quotes = [
+      "You are not just someone I talk to. You’re someone my heart waits for.",
+      "Even on days we don’t talk much, a part of me is still with you.",
+      "Distance can touch our routines, but not the way I feel for you.",
+      "If my heart had a wallpaper, it would be your smile."
+    ];
+    const quoteText = document.getElementById("quoteText");
+    const quoteIndexLabel = document.getElementById("quoteIndexLabel");
+    let qIndex = 0;
+
+    function updateQuote() {
+      quoteText.textContent = quotes[qIndex];
+      quoteIndexLabel.textContent = "Note " + (qIndex + 1) + " of " + quotes.length;
+      qIndex = (qIndex + 1) % quotes.length;
+    }
+
+    setInterval(updateQuote, 5000);
+    updateQuote();
+  </script>
+</body>
+</html>
